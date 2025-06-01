@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Your Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet"> <!-- Added NTR font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <style>
+            body {
+                font-family: 'NTR', 'Work Sans', sans-serif; /* Ensure NTR is applied */
+                margin: 0; /* Ensure no margin */
+                padding: 0;
+                background: #020c1b;
+                color: #BDC4D4;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center main content */
+            }
+    
+            /* Other styles remain unchanged */
+    
+    
+
+        header {
+            padding: 0; /* Remove padding */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+            flex-grow: 1;
+            justify-content: flex-start;
+            background: #020c1b; /* Same gradient */
+            border-bottom: 2px solid #020c1b; /* Slightly transparent border */
+            padding: 0.5rem 0; /* Adjust padding to fit content */
+        }
+
+        nav a {
+            font-family: 'NTR', sans-serif;
+            font-weight: bolder;
+            color: #BDC4D4;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            position: relative;
+            font-size: 0.8rem;
+
+        }
+
+        .get-in-touch {
+            margin-left: auto;
+        }
+
+        main {
+            max-width: 900px;
+            margin-top: 80px; /* Ensure content is below the fixed navbar */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the greeting */
+            height: auto;
+            padding: 20px;
+        }
+
+        .intro-container {
+            text-align: left; /* Keep text and icons left-aligned */
+            width: 100%; /* Full width for centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the intro container */
+        }
+
+        .logo {
+            max-width: 100%; 
+            height: auto; 
+            margin-bottom: 20px; 
+        }
+
+        h2 {
+        
+            font-size: 5rem; 
+            line-height: 1.2; 
+            margin: 0; 
+        }
+
+        h3 {
+            font-size: 2.5rem; /* Increased font size */
+            line-height: 1.2;
+            margin: 0;
+            margin-left: 0; /* Keep About Me section left-aligned */
+        }
+
+        .animated-text {
+            display: inline;
+            font-weight: bold;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: #24292e;
+            animation: blink 0.7s step-end infinite;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .social-icons {
+            margin-top: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start; /* Keep social icons left-aligned */
+            width: 100%; /* Allow to take full width */
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #BDC4D4;
+            font-size: 2rem;
+        }
+
+        .line {
+            border-top: 1px solid #24292e5e;
+            width: 200px;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .about-section {
+            max-width: 1000px; 
+            margin-top: 10px;
+            padding: 20px;
+            background: transparent;
+            width: 100%; 
+            text-align: left; 
+        }
+
+        .about-section h3 {
+            margin-bottom: 20px; /* Add space between heading and content */
+        }
+
+        .pos_cen {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; /* Add consistent spacing */
+        }
+
+        .about-card {
+            background: #020c1b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-card h3 {
+            margin: 0; /* Remove all margins */
+            padding: 0; /* Remove all padding */
+            display: flex;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: flex-start;
+            margin-top: 40px; /* Add margin to move image down */
+        }
+
+        .about-content p {
+            display: flex;
+            margin-right: 450px; /* Increased margin to give more space for image */
+            vertical-align: left;
+        }
+
+        .technologies {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5px;
+            margin-top: 15px;
+            width: 100%; /* Changed from 50% to 100% since it's inside the card */
+        }
+
+        p {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem; /* Increased font size */
+            line-height: 1.5;
+            margin-top: 0px;
+            margin-bottom: 0; 
+            margin-left: 0; /* Moved completely to the left */
+            text-align: justify; /* Justify text */
+            text-justify: inter-word; /* Improve justification */
+        }
+
+        .technology-item {
+            display: flex;
+            align-items: center; /* Center align items vertically */
+            height: 20px; 
+            margin-top: 5px;
+        }
+        .technology-item span {
+            font-size: 1rem; /* Increased font size */
+            color: #BDC4D4; /* Make 3sure it matches your theme */
+        }
+
+
+        /* From Uiverse.io by Nawsome */
+        .arrow {
+            cursor: pointer;
+            height: 15px; /* Decreased size */
+            width: 8px; /* Decreased size */
+            margin-right: 8px; /* Space between arrow and text */
+            position: relative; /* Changed to relative for proper alignment */
+        }
+
+        .arrow-top, .arrow-bottom {
+            background-color: #64ffda;
+            height: 1px; /* Adjusted height for smaller size */
+            left: 50%; /* Centered the arrow */
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateX(-50%); /* Centering the arrow */
+        }
+
+        .arrow-top:after, .arrow-bottom:after {
+            background-color: #fff;
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all 0.15s;
+        }
+
+        .arrow-top {
+            transform: rotate(45deg);
+            transform-origin: bottom right;
+        }
+
+        .arrow-top:after {
+            left: 100%;
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow-bottom {
+            transform: rotate(-45deg);
+            transform-origin: top right;
+        }
+
+        .arrow-bottom:after {
+            left: 0;
+            right: 100%;
+            transition-delay: 0.15s;
+        }
+
+        .arrow:hover .arrow-top:after {
+            left: 0;
+            transition-delay: 0.15s;
+        }
+
+        .arrow:hover .arrow-bottom:after {
+            right: 0;
+            transition-delay: 0s;
+        }
+
+        .arrow:active {
+            transform: scale(0.9);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+/* New Projects Section Styles */
+#projects {
+    margin: auto;
+    padding-top: 100px;
+    max-width: 1000px;
+    min-height: 50vh;
+    
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 1080px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        place-items: center;
+    }
+}
+
+.projects-card {
+    position: relative;
+    cursor: default;
+    width:270px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 0.5rem;
+    background-color: #112240; /* Corrected color */
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.projects-card:hover {
+    transform: translateY(-7px);
+    background-color: #233554; /* Corrected color */
+}
+
+.card-header {
+    margin-top: -20px;
+    display: flex;
+    padding: 1.25em 0 !important;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: none !important;
+}
+
+.folder-icon {
+    color: #64ffda; /* Corrected color */
+}
+
+.github-icon {
+    margin-top: 6px;
+   color: #BDC4D4;
+}
+
+.github-icon:hover {
+    color: #a2e0ff; /* Corrected color */
+}
+
+.open-icon {
+    margin-left: 10px;
+}
+
+.card-title {
+    font-family: "NTR", sans-serif;
+    color: #ccd6f6; /* Corrected color */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-desc {
+    font-family: "NTR", sans-serif;
+    color: #8892b0; /* Corrected color */
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+
+.card-tech {
+    font-family: "NTR", sans-serif;
+    color: #8892b0; /* Corrected color */
+    font-size: 16px;
+}
+
+/* New Project Card Styles */
+.article-wrapper {
+    width: 300px;
+    transition: 0.15s all ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    border: 4px solid transparent;
+    cursor: pointer;
+    background-color: #112240;
+}
+
+.article-wrapper:hover {
+    box-shadow: 10px 10px 0 #64ffda, 20px 20px 0 #233554;
+    border-color: #64ffda;
+    transform: translate(-20px, -20px);
+}
+
+.article-wrapper:active {
+    box-shadow: none;
+    transform: translate(0, 0);
+}
+
+.container-project {
+    width: 100%;
+    height: 170px;
+    background: #233554;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ccd6f6;
+}
+
+.flex-pr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-type {
+    background: #233554;
+    color: #64ffda;
+    font-weight: bold;
+    padding: 0.3em 0.7em;
+    border-radius: 15px;
+    font-size: 12px;
+    letter-spacing: -0.6px;
+}
+
+.project-hover {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.article-wrapper:hover .project-hover {
+    transform: translateY(-5px);
+    background-color: transparent;
+}
+
+.project-hover:hover i {
+    transform: scale(1.1);
+}
+
+.types {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Header/Navigation */
+    nav {
+        padding: 0.5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        background: #020c1b;
+    }
+
+    nav a {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.3rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .get-in-touch {
+        margin-left: auto;
+        padding: 0.2rem 0.3rem !important;
+        flex-shrink: 0;
+    }
+
+    /* Project Cards Mobile Fixes */
+    .article-wrapper {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 5px;
+        background-color: #112240;
+        border-radius: 10px;
+    }
+
+    .project-info {
+        padding: 15px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-title {
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        white-space: normal; /* Allow text to wrap */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Show max 2 lines */
+        -webkit-box-orient: vertical;
+    }
+
+    .types {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .project-type {
+        font-size: 9px; /* Slightly smaller font */
+        padding: 0.12em 0.35em;
+        margin: 2px;
+        background: #233554;
+        color: #64ffda;
+        border-radius: 15px;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Specific fix for AI model tag */
+    .project-type:last-child {
+        font-size: 8.5px; /* Even smaller for the AI model tag */
+        padding: 0.1em 0.3em;
+        letter-spacing: -0.2px; /* Tighter letter spacing */
+    }
+
+    .container-project {
+        height: 140px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Main Section */
+    main {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 40px 20px 20px 20px; /* Reduced bottom padding */
+        margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .line {
+        width: 120px;
+        margin-left: 10px;
+    }
+
+    .pos_cen {
+        flex-direction: column;
+        align-items: center; /* Center the card */
+        gap: 20px;
+        width: 100%;
+    }
+
+    .about-card {
+        width: 100%;
+        padding: 30px; /* Reduced padding */
+        margin: 0 auto; /* Center the card */
+        max-width: 700px;
+        box-sizing: border-box;
+    }
+
+    .about-image {
+        display: none; /* Hide image on mobile */
+    }
+
+    .img_deg {
+        display: none; /* Hide image on mobile */
+    }
+
+    .about-card h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+        margin: 0 0 35px 0;
+        width: 100%;
+        padding: 0;
+        display: block;
+        max-width: 100%;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        letter-spacing: -0.2px;
+    }
+
+    .about-content p {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .technologies {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 25px;
+        margin-top: 35px;
+        width: 100%;
+    }
+
+    .technology-item {
+        height: auto;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .technology-item span {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .arrow {
+        height: 12px;
+        width: 6px;
+        margin-right: 6px;
+    }
+
+    /* Projects Section */
+    .projects-section {
+        padding: 20px 20px 40px 20px; /* Reduced top padding */
+        margin-top: 0; /* Remove top margin */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .projects-section .about-card {
+        margin-top: 0; /* Remove top margin */
+    }
+
+    .projects-section h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #BDC4D4; /* Match about section text color */
+    }
+
+    .projects-section .line {
+        width: 120px;
+        margin-left: 10px;
+        border-top: 1px solid #24292e5e; /* Match about section line */
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem; /* Reduced gap */
+        padding: 0.5rem 0; /* Reduced padding */
+        overflow-x: visible;
+        margin-top: 15px; /* Reduced margin */
+        width: 100%;
+    }
+
+    .article-wrapper:hover {
+        transform: translateY(-5px);
+        box-shadow: 5px 5px 0 #64ffda, 10px 10px 0 #233554;
+    }
+
+    /* Footer */
+    .footer {
+        margin-top: 15px;
+        padding: 15px 0;
+    }
+
+    .copyright-text {
+        font-size: 0.9rem;
+    }
+
+    .about-card h3 {
+        text-align: left;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 0.3rem;
+        gap: 1px;
+    }
+
+    nav a {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.25rem;
+    }
+
+    .project-type {
+        font-size: 8.5px;
+        padding: 0.1em 0.3em;
+    }
+
+    .project-type:last-child {
+        font-size: 8px;
+        padding: 0.08em 0.25em;
+    }
+
+    .project-title {
+        font-size: 1.1em;
+    }
+
+    .container-project {
+        height: 140px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .technologies {
+        grid-gap: 12px;
+    }
+
+    .technology-item span {
+        font-size: 0.9rem;
+    }
+
+    .about-section {
+        padding: 30px 15px 15px 15px; /* Further reduced bottom padding */
+    }
+
+    .about-card {
+        padding: 25px; /* Further reduced padding */
+        max-width: 600px;
+    }
+
+    .about-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .line {
+        width: 100px;
+    }
+
+    .about-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        letter-spacing: -0.2px;
+    }
+
+    .projects-section {
+        padding: 15px 15px 30px 15px; /* Further reduced top padding */
+    }
+
+    .projects-section .about-card {
+        padding: 25px; /* Further reduced padding */
+        max-width: 600px;
+    }
+
+    .projects-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .projects-section .line {
+        width: 100px;
+    }
+
+    .projects-grid {
+        gap: 0.8rem; /* Further reduced gap */
+        margin-top: 12px; /* Further reduced margin */
+    }
+}
+
+/* Fix for devices between 768px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-image {
+        margin-left: 40px;
+    }
+
+    .about-content p {
+        margin-right: 150px;
+    }
+}
+
+/* Add slideshow styles */
+.profile-slideshow {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.profile-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.profile-slideshow .slide.active {
+    opacity: 1;
+}
+
+/* Update the existing img_deg class */
+.img_deg {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 6px 13px 23px -5px rgba(0, 0, 0, 0.46);
+    object-fit: cover;
+}
+
+/* Add styles for the slideshow arrows */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64ffda;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.slideshow-arrow:hover {
+    color: #64ffda;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Remove the glow effect styles since we don't need them anymore */
+.slideshow-arrow::before {
+    display: none;
+}
+
+/* Fix for project card hover on mobile */
+@media (hover: none) {
+    .article-wrapper:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="Resume 2025 (updated).pdf" target="_blank">RESUME</a>
+            <a href="mailto:h.akramnew@gmail.com" class="get-in-touch">GET IN TOUCH</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro-container">
+            <div id="fractal-tree"></div>
+            <h2>
+                Hi, <span style="color: #64ffda;">Hareem</span> here<br>
+                I like to <span class="animated-text" id="dynamic-text"></span><span class="cursor" id="cursor"></span>
+            </h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/hareem-akram-886143218" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Hareem2024" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+    </div>
+        </div>
+    </main>
+
+    <div class="about-section" id="about">
+        <div class="pos_cen">
+            <div class="about-card">
+                <h3>About me<div class="line"></div></h3>
+                <p>
+                    I am a <span style="color: #64ffda;">Software Engineering</span> major, currently pursuing my degree with a specialization in <span style="color: #64ffda;">Full Stack web development</span> and <span style="color: #64ffda;">mobile app development</span>, I bring over <span style="color: #64ffda;">2 years</span> of experience in <span style="color: #64ffda;">front-end & back-end</span> technologies. My experience includes working with <span style="color: #64ffda;">startups</span>, <span style="color: #64ffda;">freelancing</span>, and taking on roles that effectively leverage my skills.
+
+                    I excel in both <span style="color: #64ffda;">team</span> and <span style="color: #64ffda;">individual</span> environments, equipped with the skills and tools to develop <span style="color: #64ffda;">scalable</span>, <span style="color: #64ffda;">high-performing</span>, and <span style="color: #64ffda;">efficient</span> solutions.<br> <br>
+                    Here are some technologies I have been working with:
+                </p>
+                <div class="technologies">
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Typescript</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Javascript ES6+</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>React.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Vue.js</span>
+                    </div>
+                   
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        
+                        <span>Node.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Express.js</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>Git</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="technology-item">
+                        <div class="arrow">
+                            <div class="arrow-top"></div>
+                            <div class="arrow-bottom"></div>
+                        </div>
+                        <span>PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+            <div class="about-image">
+                <div class="profile-slideshow" style="width: 300px; height: 300px; overflow: hidden; border-radius: 10px;">
+                    <img src="Laboratory 研究室.gif" alt="Profile GIF" class="img_deg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="projects-section" id="projects">
+        <div class="about-card">
+            <h3>Projects<div class="line"></div></h3>
+            <div class="projects-grid">
+                <article class="article-wrapper" onclick="window.location.href='projects/elevate.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="Safewatch main.png".jpg" alt="Project 1" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">SafeWatch Detection App</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• JavaScript</span>
+                            <span class="project-type">• MediaPipe</span>
+                            <span class="project-type">• Web Audio API</span>
+                            <span class="project-type">• Tailwind CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-wrapper" onclick="window.location.href='projects/collabmark.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="collabmark main.png" alt="Project 2" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">Markdown Editor</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• React</span>
+                            <span class="project-type">• TypeScript</span>
+                            <span class="project-type">• Y.js</span>
+                            <span class="project-type">• WebRTC</span>
+                            <span class="project-type">• IndexedDB</span>
+                            <span class="project-type">• Tailwind CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-wrapper" onclick="window.location.href='projects/attendance.html'" style="cursor: pointer;">
+                    <div class="rounded-lg container-project">
+                        <img src="attendancesystem.png" alt="Project 3" class="project-image">
+                    </div>
+                    <div class="project-info">
+                        <div class="flex-pr">
+                            <div class="project-title text-nowrap">Attendance Detection System</div>
+                        </div>
+                        <div class="types">
+                            <span class="project-type">• React 19</span>
+                            <span class="project-type">• TypeScript</span>
+                            <span class="project-type">• Tailwind CSS</span>
+                            <span class="project-type">• face-api.js</span>
+                            <span class="project-type">• ES Modules</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+      </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright-text">Built and designed by Hareem.</p>
+        </div>
+    </footer>
+ 
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -59,8 +59,6 @@
 
         .get-in-touch {
             margin-left: auto;
-            padding: 0.5rem 1rem !important; /* Equal padding on both sides */
-            flex-shrink: 0;
         }
 
         main {
@@ -496,11 +494,6 @@
         -webkit-overflow-scrolling: touch;
         width: 100%;
         background: #020c1b;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
     }
 
     nav a {
@@ -512,100 +505,27 @@
 
     .get-in-touch {
         margin-left: auto;
-        padding: 0.2rem 0.3rem !important; /* Equal padding on both sides for mobile */
+        padding: 0.2rem 0.3rem !important;
         flex-shrink: 0;
     }
 
-    /* Main Section */
-    main {
-        margin-top: 120px;
-        padding: 10px;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* Projects Section */
-    .projects-section {
-        padding: 20px 20px 40px 20px;
-        margin-top: 0;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0.5rem 0;
-        overflow-x: hidden;
-        margin-top: 15px;
-        width: 100%;
-        max-width: 100%;
-    }
-
+    /* Project Cards Mobile Fixes */
     .article-wrapper {
         width: 100%;
-        max-width: 100%;
+        max-width: 300px;
         margin: 0 auto;
         padding: 5px;
         background-color: #112240;
         border-radius: 10px;
-        box-sizing: border-box;
-    }
-
-    .container-project {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
     }
 
     .project-info {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
+        padding: 12px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
-    .types {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* About Section */
-    .about-section {
-        padding: 40px 20px 20px 20px;
-        margin-top: 20px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
-
-    .about-card {
-        width: 100%;
-        max-width: 100%;
-        padding: 30px;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    .about-content p {
-        width: 100%;
-        max-width: 100%;
-        margin-right: 0;
-        box-sizing: border-box;
-    }
-
-    .technologies {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Project Cards Mobile Fixes */
     .project-title {
         font-size: 1.1em;
         margin-bottom: 5px;
@@ -615,6 +535,14 @@
         display: -webkit-box;
         -webkit-line-clamp: 2; /* Show max 2 lines */
         -webkit-box-orient: vertical;
+    }
+
+    .types {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 5px;
+        width: 100%;
     }
 
     .project-type {
@@ -650,6 +578,11 @@
     }
 
     /* Main Section */
+    main {
+        margin-top: 120px;
+        padding: 10px;
+    }
+
     h2 {
         font-size: 2.5rem;
         text-align: center;
@@ -660,6 +593,13 @@
     }
 
     /* About Section */
+    .about-section {
+        padding: 40px 20px 20px 20px; /* Reduced bottom padding */
+        margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     h3 {
         font-size: 2rem;
     }
@@ -674,6 +614,14 @@
         align-items: center; /* Center the card */
         gap: 20px;
         width: 100%;
+    }
+
+    .about-card {
+        width: 100%;
+        padding: 30px; /* Reduced padding */
+        margin: 0 auto; /* Center the card */
+        max-width: 700px;
+        box-sizing: border-box;
     }
 
     .about-image {
@@ -741,6 +689,13 @@
     }
 
     /* Projects Section */
+    .projects-section {
+        padding: 20px 20px 40px 20px; /* Reduced top padding */
+        margin-top: 0; /* Remove top margin */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .projects-section .about-card {
         margin-top: 0; /* Remove top margin */
     }
@@ -758,6 +713,16 @@
         width: 120px;
         margin-left: 10px;
         border-top: 1px solid #24292e5e; /* Match about section line */
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem; /* Reduced gap */
+        padding: 0.5rem 0; /* Reduced padding */
+        overflow-x: visible;
+        margin-top: 15px; /* Reduced margin */
+        width: 100%;
     }
 
     .article-wrapper:hover {
@@ -782,19 +747,6 @@
 
 /* Small Mobile Devices */
 @media screen and (max-width: 480px) {
-    body {
-        overflow-x: hidden;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
     nav {
         padding: 0.3rem;
         gap: 1px;

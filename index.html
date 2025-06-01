@@ -10,13 +10,20 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <style>
+            /* Only add these two lines at the very top of the style section */
+            html {
+                overflow-x: hidden;
+            }
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
             /* Base styles for mobile fix */
             * {
                 box-sizing: border-box;
             }
 
             html, body {
-                overflow-x: hidden;
                 position: relative;
                 -webkit-overflow-scrolling: touch;
             }

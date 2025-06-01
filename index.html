@@ -10,135 +10,17 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <style>
-            /* Only add these two lines at the very top of the style section */
-            html {
-                overflow-x: hidden;
-            }
             body {
-                overflow-x: hidden;
-                width: 100%;
-            }
-            /* Base styles for mobile fix */
-            * {
-                box-sizing: border-box;
-            }
-
-            html, body {
-                position: relative;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            /* Keep original desktop styles */
-            body {
-                font-family: 'NTR', 'Work Sans', sans-serif;
-                margin: 0;
+                font-family: 'NTR', 'Work Sans', sans-serif; /* Ensure NTR is applied */
+                margin: 0; /* Ensure no margin */
                 padding: 0;
                 background: #020c1b;
                 color: #BDC4D4;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: center; /* Center main content */
             }
-
-            /* Mobile specific fixes */
-            @media screen and (max-width: 768px) {
-                body {
-                    overflow-x: hidden;
-                    width: 100%;
-                }
-
-                .container, main, .about-section, .projects-section {
-                    width: 100%;
-                    max-width: 100%;
-                    padding: 0 15px;
-                    overflow-x: hidden;
-                }
-
-                nav {
-                    width: 100%;
-                    max-width: 100%;
-                    overflow-x: auto;
-                    -webkit-overflow-scrolling: touch;
-                }
-
-                .article-wrapper {
-                    width: 100%;
-                    max-width: 100%;
-                }
-
-                .article-wrapper:hover {
-                    transform: none !important;
-                }
-            }
-
-            /* iPhone specific fixes */
-            @supports (-webkit-touch-callout: none) {
-                body {
-                    overflow-x: hidden;
-                    position: relative;
-                }
-
-                .container, main, .about-section, .projects-section {
-                    width: 100%;
-                    max-width: 100%;
-                    overflow-x: hidden;
-                }
-            }
-
-            /* Container fixes */
-            .container, main, .about-section, .projects-section {
-                width: 100%;
-                max-width: 100%;
-                padding: 0 15px;
-                margin: 0 auto;
-                overflow-x: hidden;
-            }
-
-            /* Navigation fixes */
-            nav {
-                width: 100%;
-                max-width: 100%;
-                padding: 0.5rem;
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 2px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                background: #020c1b;
-                position: fixed;
-                top: 0;
-                z-index: 1000;
-            }
-
-            nav a {
-                white-space: nowrap;
-                flex-shrink: 0;
-            }
-
-            /* Project cards fixes */
-            .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-                padding: 2rem 0;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .article-wrapper {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-                transform: none !important;
-            }
-
-            .article-wrapper:hover {
-                transform: translateY(-5px) !important;
-                box-shadow: 5px 5px 0 #64ffda, 10px 10px 0 #233554;
-            }
-
+    
             /* Other styles remain unchanged */
     
     
@@ -188,8 +70,6 @@
             align-items: center; /* Center the greeting */
             height: auto;
             padding: 20px;
-            width: 100%;
-            box-sizing: border-box;
         }
 
         .intro-container {
@@ -268,7 +148,6 @@
             background: transparent;
             width: 100%; 
             text-align: left; 
-            box-sizing: border-box;
         }
 
         .about-section h3 {
@@ -615,7 +494,6 @@
         -webkit-overflow-scrolling: touch;
         width: 100%;
         background: #020c1b;
-        box-sizing: border-box;
     }
 
     nav a {
@@ -1052,86 +930,6 @@
     .article-wrapper:hover {
         transform: none;
         box-shadow: none;
-    }
-}
-
-/* Update container styles */
-.container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-/* Update projects section styles */
-.projects-section {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Update project cards container */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Update project card styles */
-.article-wrapper {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-/* Update mobile styles */
-@media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    nav {
-        width: 100%;
-        padding: 0.5rem;
-        box-sizing: border-box;
-    }
-
-    .about-card {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .about-content p {
-        margin-right: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem 0;
-    }
-
-    .article-wrapper {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .container-project {
-        width: 100%;
-    }
-
-    .project-info {
-        width: 100%;
-        box-sizing: border-box;
     }
 }
 

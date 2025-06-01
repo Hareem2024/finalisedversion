@@ -409,7 +409,7 @@
 
 .container-project {
     width: 100%;
-    height: 170px;
+    height: 150px;
     background: #233554;
     overflow: hidden;
 }
@@ -421,14 +421,14 @@
 }
 
 .project-info {
-    padding: 20px 10px;
+    padding: 15px 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .project-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin: 0;
     font-weight: 600;
     overflow: hidden;
@@ -447,9 +447,9 @@
     background: #233554;
     color: #64ffda;
     font-weight: bold;
-    padding: 0.3em 0.7em;
+    padding: 0.2em 0.5em;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 0.9rem;
     letter-spacing: -0.6px;
 }
 
@@ -475,7 +475,7 @@
 }
 
 .types {
-    gap: 10px;
+    gap: 8px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -520,10 +520,10 @@
     }
 
     .project-info {
-        padding: 15px 10px;
+        padding: 12px 8px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 
     .project-title {
@@ -546,8 +546,8 @@
     }
 
     .project-type {
-        font-size: 9px; /* Slightly smaller font */
-        padding: 0.12em 0.35em;
+        font-size: 0.8rem;
+        padding: 0.15em 0.4em;
         margin: 2px;
         background: #233554;
         color: #64ffda;
@@ -566,7 +566,7 @@
     }
 
     .container-project {
-        height: 140px;
+        height: 130px;
         border-radius: 8px;
         overflow: hidden;
     }
@@ -1062,18 +1062,21 @@
             <div class="projects-grid">
                 <article class="article-wrapper" onclick="window.location.href='projects/elevate.html'" style="cursor: pointer;">
                     <div class="rounded-lg container-project">
-                        <img src="Safewatch main.png".jpg" alt="Project 1" class="project-image">
+                        <img src="Safewatch main.png" alt="Project 1" class="project-image">
                     </div>
                     <div class="project-info">
                         <div class="flex-pr">
-                            <div class="project-title text-nowrap">SafeWatch Detection App</div>
+                            <div class="project-title text-nowrap">SafeWatch</div>
                         </div>
                         <div class="types">
                             <span class="project-type">• JavaScript</span>
-                            <span class="project-type">• MediaPipe</span>
+                            <span class="project-type">• MediaPipe Face Mesh</span>
                             <span class="project-type">• Web Audio API</span>
-                            <span class="project-type">• Tailwind CSS</span>
+                            <span class="project-type">• TailwindCSS</span>
                         </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #8892b0;">
+                            A browser-based real-time app that detects user drowsiness or distraction using just the webcam — no AI APIs or cloud required.
+                        </p>
                     </div>
                 </article>
 
@@ -1083,16 +1086,19 @@
                     </div>
                     <div class="project-info">
                         <div class="flex-pr">
-                            <div class="project-title text-nowrap">Markdown Editor</div>
+                            <div class="project-title text-nowrap">CollabMark – Collaborative Editor</div>
                         </div>
                         <div class="types">
                             <span class="project-type">• React</span>
                             <span class="project-type">• TypeScript</span>
-                            <span class="project-type">• Y.js</span>
+                            <span class="project-type">• Y.js (CRDT)</span>
                             <span class="project-type">• WebRTC</span>
                             <span class="project-type">• IndexedDB</span>
-                            <span class="project-type">• Tailwind CSS</span>
+                            <span class="project-type">• TailwindCSS</span>
                         </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #8892b0;">
+                            A privacy-first, real-time collaborative markdown editor — like Google Docs for developers — that works even offline.
+                        </p>
                     </div>
                 </article>
 
@@ -1102,15 +1108,17 @@
                     </div>
                     <div class="project-info">
                         <div class="flex-pr">
-                            <div class="project-title text-nowrap">Attendance Detection System</div>
+                            <div class="project-title text-nowrap">Face Recognition Attendance</div>
                         </div>
                         <div class="types">
-                            <span class="project-type">• React 19</span>
-                            <span class="project-type">• TypeScript</span>
-                            <span class="project-type">• Tailwind CSS</span>
-                            <span class="project-type">• face-api.js</span>
-                            <span class="project-type">• ES Modules</span>
+                            <span class="project-type">• Python</span>
+                            <span class="project-type">• face_recognition</span>
+                            <span class="project-type">• OpenCV</span>
+                            <span class="project-type">• CSV logging</span>
                         </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #8892b0;">
+                            A simple but effective attendance system using facial recognition — useful for classrooms, labs, or secure spaces.
+                        </p>
                     </div>
                 </article>
             </div>

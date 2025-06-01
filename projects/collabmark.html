@@ -16,17 +16,21 @@
         <img src="../collabmark main.png" alt="Markdown Editor Screenshot" class="project-image">
         <div class="project-desc">
             <p>
-                Tech Stack: React, TypeScript, Y.js, WebRTC, IndexedDB, Tailwind CSS
+                <strong>Tech Stack:</strong> React, TypeScript, Y.js (CRDT), WebRTC, IndexedDB, TailwindCSS
             </p>
             <p>
-                A collaborative markdown editor with real-time synchronization and offline capabilities.
+                A privacy-first, real-time collaborative markdown editor — like Google Docs for developers — that works even offline.
             </p>
             <ul>
-                <li>Implemented real-time collaboration using Y.js and WebRTC</li>
-                <li>Built offline-first functionality with IndexedDB for local storage</li>
-                <li>Created a responsive UI with Tailwind CSS</li>
-                <li>Integrated markdown parsing and preview features</li>
+                <li>Built with Y.js CRDTs for conflict-free editing across multiple users</li>
+                <li>Uses WebRTC for direct peer-to-peer syncing with no backend</li>
+                <li>Edits are persisted via IndexedDB and sync when back online</li>
+                <li>Includes user presence indicators, activity logs, and a live Markdown preview pane</li>
+                <li>Designed a custom dark UI with split editor/preview layout and fully responsive behavior</li>
             </ul>
+            <p>
+                <strong>Why it matters:</strong> Built from scratch to explore distributed state, offline-first architecture, and collaborative UI — all without third-party APIs.
+            </p>
         </div>
         <img src="../collabmark1.png" alt="Markdown Editor Interface" class="project-image">
        
